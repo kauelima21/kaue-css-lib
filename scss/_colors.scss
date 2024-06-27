@@ -1,0 +1,29 @@
+@each $key, $value in $colors {
+  .text-#{$key} {
+    color: $value;
+  }
+
+  .text-hover-#{$key} {
+    &:hover {
+      color: $value;
+    }
+  }
+
+  .bg-#{$key} {
+    background-color: $value;
+  }
+
+  .bg-hover-#{$key} {
+    &:hover {
+      color: $value;
+    }
+  }
+
+  .border-#{$key} {
+    border-color: $value;
+  }
+}
+
+.bg-transparent {
+  background-color: transparent;
+}

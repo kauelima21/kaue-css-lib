@@ -1,0 +1,294 @@
+// theme colors
+$primary: #0897e9;
+$secondary: #feac0e;
+$complementary-green: #0adbe3;
+$complementary-purple: #6b48ff;
+$grey-default-dark: #363636;
+$grey-default-light: #eeeeee;
+
+// colors palette
+$colors: (
+  "primary-500": $primary,
+  "primary-50": #e6f5fd,
+  "primary-300": #6bc1f2,
+  "primary-700": #055b8c,
+  "secondary-50": #fff7e7,
+  "secondary-150": #ffe6b7,
+  "secondary-300": #fecd6e,
+  "secondary-400": #febd3e,
+  "secondary-500": $secondary,
+  "secondary-600": #cb8a0b,
+  "secondary-850": #4c3404,
+  "green-50": #e7fbfc,
+  "green-200": #9df1f4,
+  "green-400": #3be2e9,
+  "green-500": $complementary-green,
+  "green-600": #08afb6,
+  "green-800": #04585b,
+  "green-900": #022c2d,
+  "purple-50": #f0edff,
+  "purple-200": #d3c8ff,
+  "purple-400": #896dff,
+  "purple-500": $complementary-purple,
+  "purple-600": #563acc,
+  "purple-800": #2b1d66,
+  "purple-900": #150e33,
+  "grey-default-dark": $grey-default-dark,
+  "grey-default-light": $grey-default-light,
+  "grey-50": #ffffff,
+  "grey-100": #fafafa,
+  "grey-200": #d2d2d2,
+  "grey-500": #5e5e5e,
+  "grey-1000": #000000,
+);
+
+// font sizes
+$text-paragraph: 1rem;
+$text-xx-sm: $text-paragraph * 0.625;
+$text-x-sm: $text-paragraph * 0.75;
+$text-sm: $text-paragraph * 0.875;
+$text-lg: $text-paragraph * 1.25;
+$text-x-lg: $text-paragraph * 1.5;
+
+$xx-sm: (
+  "label": "xx-sm",
+  "font": $text-xx-sm,
+  "line-height": $text-xx-sm * 1.8,
+);
+$x-sm: (
+  "label": "x-sm",
+  "font": $text-x-sm,
+  "line-height": $text-x-sm * 1.66,
+);
+$sm: (
+  "label": "sm",
+  "font": $text-sm,
+  "line-height": $text-sm * 1.57,
+);
+$paragraph: (
+  "label": "base",
+  "font": $text-paragraph,
+  "line-height": $text-paragraph * 1.5,
+);
+$lg: (
+  "label": "lg",
+  "font": $text-lg,
+  "line-height": $text-lg * 1.4,
+);
+$x-lg: (
+  "label": "x-lg",
+  "font": $text-x-lg,
+  "line-height": $text-x-lg * 1.33,
+);
+
+$fonts: $xx-sm, $x-sm, $sm, $paragraph, $lg, $x-lg;
+
+// heading sizes
+$heading-1: $text-paragraph * 4;
+$heading-2: $text-paragraph * 3.5;
+$heading-3: $text-paragraph * 3;
+$heading-4: $text-paragraph * 2.5;
+$heading-5: $text-paragraph * 2;
+$heading-6: $text-paragraph * 1.5;
+
+$h1: (
+  "label": "xx-lg",
+  "font": $heading-1,
+  "line-height": $heading-1 * 1.125,
+);
+$h2: (
+  "label": "x-lg",
+  "font": $heading-2,
+  "line-height": $heading-2 * 1.1428571429,
+);
+$h3: (
+  "label": "lg",
+  "font": $heading-3,
+  "line-height": $heading-3 * 1.16,
+);
+$h4: (
+  "label": "md",
+  "font": $heading-4,
+  "line-height": $heading-4 * 1.2,
+);
+$h5: (
+  "label": "sm",
+  "font": $heading-5,
+  "line-height": $heading-5 * 1.25,
+);
+$h6: (
+  "label": "x-sm",
+  "font": $heading-6,
+  "line-height": $heading-6 * 1.33,
+);
+
+$headings: $h1, $h2, $h3, $h4, $h5, $h6;
+
+// radius
+$none: (
+  "label": "none",
+  "radius": 0px,
+);
+$sm: (
+  "label": "-sm",
+  "radius": 0.125rem,
+);
+$rounded: (
+  "label": "",
+  "radius": 0.25rem,
+);
+$md: (
+  "label": "-md",
+  "radius": 0.375rem,
+);
+$lg: (
+  "label": "-lg",
+  "radius": 0.5rem,
+);
+$x-lg: (
+  "label": "-x-lg",
+  "radius": 0.75rem,
+);
+$xx-lg: (
+  "label": "-xx-lg",
+  "radius": 1rem,
+);
+$xxx-lg: (
+  "label": "-xxx-lg",
+  "radius": 1.5rem,
+);
+$full: (
+  "label": "-full",
+  "radius": 9999px,
+);
+$radius: $none, $sm, $rounded, $md, $lg, $x-lg, $xx-lg, $xxx-lg, $full;
+
+// spacing
+$spacing: (
+    "label": "x-sm",
+    "value": 0.125rem,
+  ),
+  (
+    "label": "1",
+    "value": 0.25rem,
+  ),
+  (
+    "label": "sm",
+    "value": 0.375rem,
+  ),
+  (
+    "label": "2",
+    "value": 0.5rem,
+  ),
+  (
+    "label": "md",
+    "value": 0.625rem,
+  ),
+  (
+    "label": "3",
+    "value": 0.75rem,
+  ),
+  (
+    "label": "lg",
+    "value": 0.875rem,
+  ),
+  (
+    "label": "4",
+    "value": 1rem,
+  ),
+  (
+    "label": "5",
+    "value": 1.25rem,
+  ),
+  (
+    "label": "6",
+    "value": 1.5rem,
+  ),
+  (
+    "label": "7",
+    "value": 1.75rem,
+  ),
+  (
+    "label": "8",
+    "value": 2rem,
+  ),
+  (
+    "label": "9",
+    "value": 2.25rem,
+  ),
+  (
+    "label": "10",
+    "value": 2.5rem,
+  ),
+  (
+    "label": "11",
+    "value": 2.75rem,
+  ),
+  (
+    "label": "12",
+    "value": 3rem,
+  ),
+  (
+    "label": "14",
+    "value": 3.5rem,
+  ),
+  (
+    "label": "16",
+    "value": 4rem,
+  ),
+  (
+    "label": "20",
+    "value": 5rem,
+  ),
+  (
+    "label": "24",
+    "value": 6rem,
+  ),
+  (
+    "label": "28",
+    "value": 7rem,
+  ),
+  (
+    "label": "32",
+    "value": 8rem,
+  ),
+  (
+    "label": "36",
+    "value": 9rem,
+  ),
+  (
+    "label": "40",
+    "value": 10rem,
+  ),
+  (
+    "label": "44",
+    "value": 11rem,
+  ),
+  (
+    "label": "48",
+    "value": 12rem,
+  ),
+  (
+    "label": "56",
+    "value": 14rem,
+  ),
+  (
+    "label": "60",
+    "value": 15rem,
+  ),
+  (
+    "label": "64",
+    "value": 16rem,
+  ),
+  (
+    "label": "72",
+    "value": 18rem,
+  ),
+  (
+    "label": "80",
+    "value": 20rem,
+  ),
+  (
+    "label": "96",
+    "value": 24rem,
+  );

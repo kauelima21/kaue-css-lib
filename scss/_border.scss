@@ -1,0 +1,11 @@
+@use "sass:map";
+
+.border {
+  border: 1px solid;
+}
+
+@each $item in $radius {
+  .rounded#{map.get($item, "label")} {
+    border-radius: map.get($item, "radius");
+  }
+}

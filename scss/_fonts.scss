@@ -1,0 +1,40 @@
+@use "sass:map";
+
+@each $font in $fonts {
+  .text-#{map.get($font, "label")} {
+    font-size: map.get($font, "font");
+    line-height: map.get($font, "line-height");
+  }
+}
+
+@each $heading in $headings {
+  .title-#{map.get($heading, "label")} {
+    font-size: map.get($heading, "font");
+    line-height: map.get($heading, "line-height");
+  }
+}
+
+$text-decorations: underline, overline, double, dotted, dashed, line-through,
+  solid, wavy, none;
+$text-transformations: capitalize, lowercase, uppercase, unset, initial, none;
+
+@each $decoration in $text-decorations {
+  .text-decoration-#{$decoration} {
+    text-decoration: $decoration;
+    text-transform: initial;
+  }
+}
+
+@each $transform in $text-transformations {
+  .text-transform-#{$transform} {
+    text-transform: $transform;
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+.non-italic {
+  font-style: normal;
+}

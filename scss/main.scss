@@ -1,0 +1,40 @@
+@import "_base";
+@import "_variables";
+@import "_fonts";
+@import "_colors";
+@import "_grid";
+@import "_border";
+@import "_spacing";
+
+// overflow
+$overflows: auto, hidden, clip, visible, scroll;
+@each $overflow in $overflows {
+  .overflow-#{$overflow} {
+    overflow: $overflow;
+  }
+
+  .overflow-x-#{$overflow} {
+    overflow-x: $overflow;
+  }
+
+  .overflow-y-#{$overflow} {
+    overflow-y: $overflow;
+  }
+}
+
+// display
+$displays: block, inline-block, inline, flex, inline-flex, table, inline-table,
+  table-caption, table-cell, table-column, table-column-group,
+  table-footer-group, table-header-group, table-row-group, table-row, flow-root,
+  grid, inline-grid, contents, list-item, hidden;
+@each $display in $displays {
+  @if $display == "hidden" {
+    .#{$display} {
+      display: none;
+    }
+  } @else {
+    .#{$display} {
+      display: $display;
+    }
+  }
+}

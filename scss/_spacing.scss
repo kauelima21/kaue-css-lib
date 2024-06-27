@@ -1,0 +1,63 @@
+@use "sass:map";
+
+@each $space in $spacing {
+  .p-#{map.get($space, "label")} {
+    padding: map.get($space, "value");
+  }
+
+  .px-#{map.get($space, "label")} {
+    padding-left: map.get($space, "value");
+    padding-right: map.get($space, "value");
+  }
+
+  .py-#{map.get($space, "label")} {
+    padding-top: map.get($space, "value");
+    padding-bottom: map.get($space, "value");
+  }
+
+  .pr-#{map.get($space, "label")} {
+    padding-right: map.get($space, "value");
+  }
+
+  .pl-#{map.get($space, "label")} {
+    padding-left: map.get($space, "value");
+  }
+
+  .pt-#{map.get($space, "label")} {
+    padding-top: map.get($space, "value");
+  }
+
+  .pb-#{map.get($space, "label")} {
+    padding-bottom: map.get($space, "value");
+  }
+
+  .m-#{map.get($space, "label")} {
+    margin: map.get($space, "value");
+  }
+
+  .mx-#{map.get($space, "label")} {
+    margin-left: map.get($space, "value");
+    margin-right: map.get($space, "value");
+  }
+
+  .my-#{map.get($space, "label")} {
+    margin-top: map.get($space, "value");
+    margin-bottom: map.get($space, "value");
+  }
+
+  .mr-#{map.get($space, "label")} {
+    margin-right: map.get($space, "value");
+  }
+
+  .ml-#{map.get($space, "label")} {
+    margin-left: map.get($space, "value");
+  }
+
+  .mt-#{map.get($space, "label")} {
+    margin-top: map.get($space, "value");
+  }
+
+  .mb-#{map.get($space, "label")} {
+    margin-bottom: map.get($space, "value");
+  }
+}

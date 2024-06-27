@@ -1,0 +1,25 @@
+{
+  "name": "kaue-css-lib",
+  "version": "0.0.1",
+  "description": "Teste de lib css",
+  "main": "dist/css/main.css",
+  "scripts": {
+    "build": "sass scss/main.scss dist/css/main.css"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "author": "Kauê Leal de Lima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kauelima21/kaue-css-lib/issues"
+  },
+  "homepage": "https://github.com/kauelima21/kaue-css-lib#readme",
+  "devDependencies": {
+    "sass": "^1.77.6"
+  }
+}
