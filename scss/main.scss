@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @import "_base";
 @import "_variables";
 @import "_fonts";
@@ -77,6 +79,24 @@ $positions: static, fixed, absolute, relative, sticky;
 @each $position in $positions {
   .#{$position} {
     position: $position;
+  }
+}
+
+@each $item in $spacing {
+  .top-#{map.get($item, "label")} {
+    top: map.get($item, "value");
+  }
+
+  .bottom-#{map.get($item, "label")} {
+    bottom: map.get($item, "value");
+  }
+
+  .left-#{map.get($item, "label")} {
+    left: map.get($item, "value");
+  }
+
+  .right-#{map.get($item, "label")} {
+    right: map.get($item, "value");
   }
 }
 
