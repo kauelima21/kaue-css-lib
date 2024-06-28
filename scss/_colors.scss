@@ -3,7 +3,7 @@
     color: $value;
   }
 
-  .text-hover-#{$key} {
+  .hover\:text-#{$key} {
     &:hover {
       color: $value;
     }
@@ -13,7 +13,7 @@
     background-color: $value;
   }
 
-  .bg-hover-#{$key} {
+  .hover\:bg-#{$key} {
     &:hover {
       color: $value;
     }
@@ -23,11 +23,23 @@
     border-color: $value;
   }
 
+  .hover\:border-#{$key} {
+    border-color: $value;
+  }
+
   .decoration-#{$key} {
+    text-decoration-color: $value;
+  }
+
+  .hover\:decoration-#{$key} {
     text-decoration-color: $value;
   }
 }
 
 .bg-transparent {
+  background-color: transparent;
+}
+
+.hover\:bg-transparent {
   background-color: transparent;
 }

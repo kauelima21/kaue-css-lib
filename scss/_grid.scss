@@ -1,5 +1,6 @@
 @use "sass:string";
 @use "sass:list";
+@use "sass:map";
 
 // bootstrap like
 .container {
@@ -173,6 +174,20 @@ $align-content: center, flex-start, flex-end, baseline, space-between,
 }
 .order-none {
   order: 0;
+}
+
+@each $item in $spacing {
+  .gap-#{map.get($item, "label")} {
+    gap: map.get($item, "value");
+  }
+
+  .gap-x-#{map.get($item, "label")} {
+    column-gap: map.get($item, "value");
+  }
+
+  .gap-y-#{map.get($item, "label")} {
+    row-gap: map.get($item, "value");
+  }
 }
 
 // grid

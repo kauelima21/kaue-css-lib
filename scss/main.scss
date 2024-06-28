@@ -6,6 +6,7 @@
 @import "_border";
 @import "_spacing";
 @import "_table";
+@import "_sizing";
 
 // box sizing
 .box-border {
@@ -125,4 +126,21 @@ $object-fit: contain, cover, fill, none, scale-down;
 }
 .aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+// list style
+.list-inside {
+  list-style-position: inside;
+}
+.list-outside {
+  list-style-position: outside;
+}
+.list-none {
+  list-style-type: none;
+}
+.list-disc {
+  list-style-type: disc;
+}
+.list-decimal {
+  list-style-type: decimal;
 }

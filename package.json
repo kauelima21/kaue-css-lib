@@ -5,6 +5,7 @@
   "main": "dist/css/main.css",
   "scripts": {
     "build": "sass scss/main.scss dist/css/main.css --style compressed",
+    "build:uncompressed": "sass scss/main.scss dist/css/main.css",
     "build:watch": "sass --watch scss/main.scss dist/css/main.css --style compressed"
   },
   "keywords": [

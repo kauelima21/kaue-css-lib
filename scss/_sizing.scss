@@ -1,0 +1,201 @@
+@use "sass:string";
+@use "sass:list";
+@use "sass:math";
+@use "sass:map";
+
+$widths: (
+    "label": "0\\.5",
+    "value": 0.125rem,
+  ),
+  (
+    "label": "1",
+    "value": 0.25rem,
+  ),
+  (
+    "label": "1\\.5",
+    "value": 0.375rem,
+  ),
+  (
+    "label": "2",
+    "value": 0.5rem,
+  ),
+  (
+    "label": "2\\.5",
+    "value": 0.625rem,
+  ),
+  (
+    "label": "3",
+    "value": 0.75rem,
+  ),
+  (
+    "label": "3\\.5",
+    "value": 0.875rem,
+  ),
+  (
+    "label": "4",
+    "value": 1rem,
+  ),
+  (
+    "label": "5",
+    "value": 1.25rem,
+  ),
+  (
+    "label": "6",
+    "value": 1.5rem,
+  ),
+  (
+    "label": "7",
+    "value": 1.75rem,
+  ),
+  (
+    "label": "8",
+    "value": 2rem,
+  ),
+  (
+    "label": "9",
+    "value": 2.25rem,
+  ),
+  (
+    "label": "10",
+    "value": 2.5rem,
+  ),
+  (
+    "label": "11",
+    "value": 2.75rem,
+  ),
+  (
+    "label": "12",
+    "value": 3rem,
+  ),
+  (
+    "label": "14",
+    "value": 3.5rem,
+  );
+@each $item in $widths {
+  .w-#{map.get($item, "label")} {
+    width: map.get($item, "value");
+  }
+
+  .max-w-#{map.get($item, "label")} {
+    max-width: map.get($item, "value");
+  }
+
+  .min-w-#{map.get($item, "label")} {
+    min-width: map.get($item, "value");
+  }
+
+  .h-#{map.get($item, "label")} {
+    height: map.get($item, "value");
+  }
+
+  .max-h-#{map.get($item, "label")} {
+    max-height: map.get($item, "value");
+  }
+
+  .min-h-#{map.get($item, "label")} {
+    min-height: map.get($item, "value");
+  }
+}
+
+@for $i from 4 through 16 {
+  .w-#{$i * 4} {
+    width: $i * 1rem;
+  }
+
+  .max-w-#{$i * 4} {
+    max-width: $i * 1rem;
+  }
+
+  .min-w-#{$i * 4} {
+    min-width: $i * 1rem;
+  }
+
+  .h-#{$i * 4} {
+    height: $i * 1rem;
+  }
+
+  .max-h-#{$i * 4} {
+    max-height: $i * 1rem;
+  }
+
+  .min-h-#{$i * 4} {
+    min-height: $i * 1rem;
+  }
+}
+
+$fractions: 2, 3, 4, 5, 6, 12;
+@each $item in $fractions {
+  @for $i from 1 to $item {
+    .w-#{$i}\/#{$item} {
+      width: math.div($i, $item) * 100%;
+    }
+  }
+}
+
+$sizes: (
+    "label": "auto",
+    "value": "auto",
+  ),
+  (
+    "label": "full",
+    "value": 100%,
+  ),
+  (
+    "label": "screen",
+    "value": 100vw,
+  );
+@each $item in $sizes {
+  .w-#{map.get($item, "label")} {
+    width: map.get($item, "value");
+  }
+  .min-w-#{map.get($item, "label")} {
+    min-width: map.get($item, "value");
+  }
+  .max-w-#{map.get($item, "label")} {
+    max-width: map.get($item, "value");
+  }
+  .h-#{map.get($item, "label")} {
+    @if map.get($item, "label") == "screen" {
+      height: 100vh;
+    } @else {
+      height: map.get($item, "value");
+    }
+  }
+  .min-h-#{map.get($item, "label")} {
+    @if map.get($item, "label") == "screen" {
+      min-height: 100vh;
+    } @else {
+      min-height: map.get($item, "value");
+    }
+  }
+  .max-h-#{map.get($item, "label")} {
+    @if map.get($item, "label") == "screen" {
+      max-height: 100vh;
+    } @else {
+      max-height: map.get($item, "value");
+    }
+  }
+}
+
+$w-content: fit-content, max-content, min-content;
+@each $item in $w-content {
+  $class-name: list.nth(string.split($item, "-"), 1);
+  w-#{$class-name} {
+    width: $item;
+  }
+  max-w-#{$class-name} {
+    width: $item;
+  }
+  min-w-#{$class-name} {
+    width: $item;
+  }
+  h-#{$class-name} {
+    height: $item;
+  }
+  max-h-#{$class-name} {
+    max-height: $item;
+  }
+  min-h-#{$class-name} {
+    min-height: $item;
+  }
+}

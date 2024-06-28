@@ -165,7 +165,7 @@ $radius: $none, $sm, $rounded, $md, $lg, $x-lg, $xx-lg, $xxx-lg, $full;
 
 // spacing
 $spacing: (
-    "label": "x-sm",
+    "label": "0\\.5",
     "value": 0.125rem,
   ),
   (
@@ -173,7 +173,7 @@ $spacing: (
     "value": 0.25rem,
   ),
   (
-    "label": "sm",
+    "label": "1\\.5",
     "value": 0.375rem,
   ),
   (
@@ -181,7 +181,7 @@ $spacing: (
     "value": 0.5rem,
   ),
   (
-    "label": "md",
+    "label": "2\\.5",
     "value": 0.625rem,
   ),
   (
@@ -189,7 +189,7 @@ $spacing: (
     "value": 0.75rem,
   ),
   (
-    "label": "lg",
+    "label": "3\\.5",
     "value": 0.875rem,
   ),
   (
