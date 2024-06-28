@@ -1,11 +1,74 @@
 @use "sass:map";
 
 .border {
-  border: 1px solid;
+  border-width: 1px;
 }
 
 @each $item in $radius {
   .rounded#{map.get($item, "label")} {
     border-radius: map.get($item, "radius");
+  }
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+$border-style: solid, dashed, dotted, double, hidden, none;
+@each $item in $border-style {
+  .border-#{$item} {
+    border-style: $item;
+  }
+}
+
+$border-width: (
+    "label": "",
+    "value": 1px,
+  ),
+  (
+    "label": "-0",
+    "value": 0px,
+  ),
+  (
+    "label": "-2",
+    "value": 2px,
+  ),
+  (
+    "label": "-4",
+    "value": 4px,
+  ),
+  (
+    "label": "-8",
+    "value": 8px,
+  );
+@each $item in $border-width {
+  .border#{map.get($item, "label")} {
+    border-width: map.get($item, "value");
+  }
+
+  .border-t#{map.get($item, "label")} {
+    border-top-width: map.get($item, "value");
+  }
+
+  .border-b#{map.get($item, "label")} {
+    border-bottom-width: map.get($item, "value");
+  }
+
+  .border-l#{map.get($item, "label")} {
+    border-left-width: map.get($item, "value");
+  }
+
+  .border-r#{map.get($item, "label")} {
+    border-right-width: map.get($item, "value");
+  }
+
+  .border-x#{map.get($item, "label")} {
+    border-left-width: map.get($item, "value");
+    border-right-width: map.get($item, "value");
+  }
+
+  .border-y-#{map.get($item, "label")} {
+    border-top-width: map.get($item, "value");
+    border-bottom-width: map.get($item, "value");
   }
 }

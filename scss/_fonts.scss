@@ -14,20 +14,47 @@
   }
 }
 
-$text-decorations: underline, overline, double, dotted, dashed, line-through,
-  solid, wavy, none;
-$text-transformations: capitalize, lowercase, uppercase, unset, initial, none;
+$decorations-style: solid, double, dotted, dashed, wavy;
+$text-decorations: underline, overline, line-through, none;
+$text-transformations: capitalize, lowercase, uppercase, none;
+
+@each $item in $decorations-style {
+  .decoration-#{$item} {
+    text-decoration-style: $item;
+  }
+}
 
 @each $decoration in $text-decorations {
-  .text-decoration-#{$decoration} {
+  $class-name: $decoration;
+  @if $decoration == "none" {
+    $class-name: "no-underline";
+  }
+  .#{$class-name} {
     text-decoration: $decoration;
-    text-transform: initial;
   }
 }
 
 @each $transform in $text-transformations {
-  .text-transform-#{$transform} {
+  $class-name: $transform;
+  @if $transform == "none" {
+    $class-name: "normal-case";
+  }
+  .#{$class-name} {
     text-transform: $transform;
+  }
+}
+
+$text-align: left, center, right, justify, start, end;
+@each $item in $text-align {
+  .text-#{$item} {
+    text-align: $item;
+  }
+}
+
+$text-wrap: wrap, nowrap, balance, pretty;
+@each $item in $text-wrap {
+  .text-#{$item} {
+    text-wrap: $item;
   }
 }
 

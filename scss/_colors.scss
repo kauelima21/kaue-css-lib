@@ -22,6 +22,10 @@
   .border-#{$key} {
     border-color: $value;
   }
+
+  .decoration-#{$key} {
+    text-decoration-color: $value;
+  }
 }
 
 .bg-transparent {

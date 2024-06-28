@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "sass:list";
+
 // bootstrap like
 .container {
   max-width: 1200px;
@@ -126,11 +129,19 @@ $wrap: wrap, wrap-reverse, nowrap;
   }
 }
 
-$justify: center, flex-start, flex-end, space-around, space-between,
-  space-evenly;
+$justify: center, normal, flex-start, flex-end, space-around, space-between,
+  space-evenly, stretch;
 @each $item in $justify {
-  .justify-content-#{$item} {
-    justify-content: $item;
+  $has-space: string.index($item, "-");
+  @if $has-space {
+    $list-item: string.split($item, "-");
+    .justify-#{list.nth($list-item, 2)} {
+      justify-content: $item;
+    }
+  } @else {
+    .justify-#{$item} {
+      justify-content: $item;
+    }
   }
 }
 
