@@ -1,3 +1,4 @@
+// bootstrap like
 .container {
   max-width: 1200px;
   margin: auto;
@@ -79,7 +80,52 @@
   flex-grow: 0;
 }
 
-// flex utilities
+// flex
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+.flex-initial {
+  flex: 0 1 auto;
+}
+.flex-none {
+  flex: none;
+}
+
+.grow {
+  flex-grow: 1;
+}
+.grow-0 {
+  flex-grow: 0;
+}
+
+.shrink {
+  flex-shrink: 1;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+$directions: row, row-reverse, column, column-reverse;
+@each $direction in $directions {
+  .flex-#{$direction} {
+    flex-direction: $direction;
+  }
+}
+
+$wrap: wrap, wrap-reverse, nowrap;
+@each $item in $wrap {
+  .flex-#{$item} {
+    flex-wrap: $item;
+  }
+}
+
 $justify: center, flex-start, flex-end, space-around, space-between,
   space-evenly;
 @each $item in $justify {
@@ -102,3 +148,21 @@ $align-content: center, flex-start, flex-end, baseline, space-between,
     align-content: $item;
   }
 }
+
+@for $i from 1 through 12 {
+  .order-#{$i} {
+    order: $i;
+  }
+}
+.order-first {
+  order: -9999;
+}
+.order-last {
+  order: 9999;
+}
+.order-none {
+  order: 0;
+}
+
+// grid
+// TODO: implement grid class util

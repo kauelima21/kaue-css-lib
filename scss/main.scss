@@ -6,6 +6,15 @@
 @import "_border";
 @import "_spacing";
 
+// box sizing
+.box-border {
+  box-sizing: border-box;
+}
+
+.box-content {
+  box-sizing: content-box;
+}
+
 // overflow
 $overflows: auto, hidden, clip, visible, scroll;
 @each $overflow in $overflows {
@@ -37,4 +46,82 @@ $displays: block, inline-block, inline, flex, inline-flex, table, inline-table,
       display: $display;
     }
   }
+}
+
+// index
+$index: 0, 10, 20, 30, 40, 50, auto;
+@each $item in $index {
+  .z-#{$item} {
+    z-index: $item;
+  }
+}
+
+// visibility
+$visibilities: visible, hidden, collapse;
+@each $visibility in $visibilities {
+  @if $visibility == "hidden" {
+    .invisible {
+      visibility: hidden;
+    }
+  } @else {
+    .#{$visibility} {
+      visibility: $visibility;
+    }
+  }
+}
+
+// positions
+$positions: static, fixed, absolute, relative, sticky;
+@each $position in $positions {
+  .#{$position} {
+    position: $position;
+  }
+}
+
+// scroll behavior
+$behaviors: auto, contain, none;
+@each $behavior in $behaviors {
+  .overscroll-#{$behavior} {
+    overscroll-behavior: $behavior;
+  }
+
+  .overscroll-y-#{$behavior} {
+    overscroll-behavior-y: $behavior;
+  }
+
+  .overscroll-x-#{$behavior} {
+    overscroll-behavior-x: $behavior;
+  }
+}
+
+$object-position: bottom, center, left, right, top;
+@each $item in $object-position {
+  .object-#{$item} {
+    object-position: $item;
+  }
+  @if $item == "left" or $item == "right" {
+    .object-#{$item}-top {
+      object-position: $item top;
+    }
+    .object-#{$item}-bottom {
+      object-position: $item bottom;
+    }
+  }
+}
+
+$object-fit: contain, cover, fill, none, scale-down;
+@each $item in $object-fit {
+  .object-#{$item} {
+    object-fit: $item;
+  }
+}
+
+.aspect-auto {
+  aspect-ratio: auto;
+}
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
