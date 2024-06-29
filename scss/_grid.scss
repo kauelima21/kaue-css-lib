@@ -133,8 +133,8 @@ $wrap: wrap, wrap-reverse, nowrap;
 $justify: center, normal, flex-start, flex-end, space-around, space-between,
   space-evenly, stretch;
 @each $item in $justify {
-  $has-space: string.index($item, "-");
-  @if $has-space {
+  $has-dash: string.index($item, "-");
+  @if $has-dash {
     $list-item: string.split($item, "-");
     .justify-#{list.nth($list-item, 2)} {
       justify-content: $item;
@@ -142,6 +142,36 @@ $justify: center, normal, flex-start, flex-end, space-around, space-between,
   } @else {
     .justify-#{$item} {
       justify-content: $item;
+    }
+  }
+}
+
+$justify-items: center, flex-start, flex-end, stretch;
+@each $item in $justify-items {
+  $has-dash: string.index($item, "-");
+  @if $has-dash {
+    $list-item: string.split($item, "-");
+    .justify-items-#{list.nth($list-item, 2)} {
+      justify-items: $item;
+    }
+  } @else {
+    .justify-items-#{$item} {
+      justify-items: $item;
+    }
+  }
+}
+
+$justify-self: auto, center, flex-start, flex-end, stretch;
+@each $item in $justify-self {
+  $has-dash: string.index($item, "-");
+  @if $has-dash {
+    $list-item: string.split($item, "-");
+    .justify-self-#{list.nth($list-item, 2)} {
+      justify-self: $item;
+    }
+  } @else {
+    .justify-self-#{$item} {
+      justify-self: $item;
     }
   }
 }
@@ -154,10 +184,17 @@ $align-items: center, flex-start, flex-end, baseline, stretch;
 }
 
 $align-content: center, flex-start, flex-end, baseline, space-between,
-  space-around;
+  space-around, stretch, normal, space-evenly;
 @each $item in $align-content {
   .align-content-#{$item} {
     align-content: $item;
+  }
+}
+
+$align-self: center, flex-start, flex-end, baseline, auto, space-around;
+@each $item in $align-self {
+  .self-#{$item} {
+    align-self: $item;
   }
 }
 

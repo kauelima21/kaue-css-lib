@@ -101,6 +101,13 @@ $positions: static, fixed, absolute, relative, sticky;
 }
 
 // scroll behavior
+$scrolls: auto, smooth;
+@each $scroll in $scrolls {
+  .scroll-#{$scroll} {
+    scroll-behavior: $scroll;
+  }
+}
+
 $behaviors: auto, contain, none;
 @each $behavior in $behaviors {
   .overscroll-#{$behavior} {

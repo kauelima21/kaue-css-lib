@@ -15,7 +15,7 @@
 
   .hover\:bg-#{$key} {
     &:hover {
-      color: $value;
+      background-color: $value;
     }
   }
 
@@ -24,7 +24,9 @@
   }
 
   .hover\:border-#{$key} {
-    border-color: $value;
+    &:hover {
+      border-color: $value;
+    }
   }
 
   .decoration-#{$key} {
@@ -32,7 +34,9 @@
   }
 
   .hover\:decoration-#{$key} {
-    text-decoration-color: $value;
+    &:hover {
+      text-decoration-color: $value;
+    }
   }
 }
 
@@ -41,5 +45,7 @@
 }
 
 .hover\:bg-transparent {
-  background-color: transparent;
+  &:hover {
+    background-color: transparent;
+  }
 }
